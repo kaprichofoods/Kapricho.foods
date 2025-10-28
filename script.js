@@ -594,16 +594,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Optimize image loading for recipes page
+    // Enhanced image loading with smooth animations
     const images = document.querySelectorAll('img[loading="lazy"]');
     images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.classList.add('loaded');
-        });
+        // Check if image is already loaded
+        if (img.complete && img.naturalHeight !== 0) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+        }
 
         // Add error handling for failed images
         img.addEventListener('error', function() {
             this.style.display = 'none';
+        });
+    });
+
+    // Add click ripple effect to buttons
+    const buttons = document.querySelectorAll('button, .cta-button, .add-to-cart-btn, .submit-btn, .chef-chat-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Create ripple element
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+            `;
+
+            // Remove existing ripples
+            const existingRipple = this.querySelector('.ripple-effect');
+            if (existingRipple) {
+                existingRipple.remove();
+            }
+
+            ripple.classList.add('ripple-effect');
+            this.style.position = 'relative';
+            this.appendChild(ripple);
+
+            // Remove ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
         });
     });
 
@@ -662,7 +708,7 @@ document.addEventListener('DOMContentLoaded', function() {
     observeElements();
 });
 
-// Add some CSS for animations
+// Add enhanced CSS for animations and effects
 const style = document.createElement('style');
 style.textContent = `
     .animate-in {
@@ -681,12 +727,19 @@ style.textContent = `
     }
 
     .loaded {
-        animation: fadeIn 0.3s ease;
+        animation: imageFadeIn 0.5s ease;
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+    @keyframes imageFadeIn {
+        from { opacity: 0; transform: scale(1.1); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
     }
 
     .nav-toggle.active span:nth-child(1) {
@@ -699,6 +752,20 @@ style.textContent = `
 
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Enhanced button interactions */
+    button:active {
+        transform: scale(0.98);
+    }
+
+    /* Smooth transitions for all interactive elements */
+    .nav-link,
+    .social-link,
+    .highlight-card,
+    .product-detail-card,
+    .recipe-item {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 `;
 document.head.appendChild(style);

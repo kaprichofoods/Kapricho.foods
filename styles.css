@@ -1168,7 +1168,166 @@ a {
     font-weight: 300;
 }
 
-/* Background Animation */
+/* Enhanced UI Animations */
+
+/* Floating Animation for Cart Widget */
+.cart-widget {
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Subtle Glow Effect for CTA Buttons */
+.cta-button,
+.add-to-cart-btn,
+.submit-btn,
+.chef-chat-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before,
+.add-to-cart-btn::before,
+.submit-btn::before,
+.chef-chat-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before,
+.add-to-cart-btn:hover::before,
+.submit-btn:hover::before,
+.chef-chat-btn:hover::before {
+    left: 100%;
+}
+
+/* Ripple Effect for Buttons */
+.cta-button,
+.add-to-cart-btn,
+.submit-btn,
+.chef-chat-btn,
+.qty-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::after,
+.add-to-cart-btn::after,
+.submit-btn::after,
+.chef-chat-btn::after,
+.qty-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:active::after,
+.add-to-cart-btn:active::after,
+.submit-btn:active::after,
+.chef-chat-btn:active::after,
+.qty-btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Staggered Animation for Recipe Gallery */
+.recipe-item {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.recipe-item:nth-child(1) { animation-delay: 0.1s; }
+.recipe-item:nth-child(2) { animation-delay: 0.2s; }
+.recipe-item:nth-child(3) { animation-delay: 0.3s; }
+.recipe-item:nth-child(4) { animation-delay: 0.4s; }
+.recipe-item:nth-child(5) { animation-delay: 0.5s; }
+.recipe-item:nth-child(6) { animation-delay: 0.6s; }
+.recipe-item:nth-child(7) { animation-delay: 0.7s; }
+.recipe-item:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Hover Effects for Product Cards */
+.product-detail-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow;
+}
+
+.product-detail-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 62, 181, 0.15);
+}
+
+/* Smooth Image Loading Animation */
+.product-image img,
+.recipe-item img,
+.carousel-slide img {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-image img.loaded,
+.recipe-item img.loaded,
+.carousel-slide img.loaded {
+    animation: imageFadeIn 0.5s ease;
+}
+
+@keyframes imageFadeIn {
+    from { opacity: 0; transform: scale(1.1); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Subtle Pulse for Highlight Cards */
+.highlight-card {
+    animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* Enhanced Modal Animation */
+.modal-content {
+    animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Background Animation with Enhanced Subtlety */
 body::before {
     content: "";
     position: fixed;
@@ -1176,15 +1335,15 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 62, 181, 0.05) 0%, transparent 50%);
-    animation: pulse 8s ease-in-out infinite alternate;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 62, 181, 0.03) 0%, transparent 50%);
+    animation: gentlePulse 12s ease-in-out infinite alternate;
     pointer-events: none;
     z-index: -1;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 0.3; }
-    100% { transform: scale(1.1); opacity: 0.5; }
+@keyframes gentlePulse {
+    0% { transform: scale(1); opacity: 0.2; }
+    100% { transform: scale(1.05); opacity: 0.4; }
 }
 
 /* Responsive Design */
