@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hecho con Pasión en Cúcuta. Nuestra Esencia. La historia de Kapricho.Foods desde un antojo casero hasta un movimiento de bienestar.">
+    <meta name="keywords" content="historia Kapricho, origen, Cúcuta, artesanal, yogurt griego, pasión, natural">
+    <title>Hecho con Pasión en Cúcuta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" data-lang="es">Kapricho.Foods</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" data-lang="es">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link" data-lang="es">Productos</a></li>
+                    <li><a href="historia.html" class="nav-link active" data-lang="es">Historia</a></li>
+                    <li><a href="recetas.html" class="nav-link" data-lang="es">Recetas</a></li>
+                    <li><a href="contacto.html" class="nav-link" data-lang="es">Contacto</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="container">
+            <h1 data-lang="es">Hecho con Pasión en Cúcuta</h1>
+            <div class="history-content">
+                <div class="history-video">
+                    <div class="video-container">
+                        <video controls poster="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761589140/DSC_3688-Mejorado-NR_n0nj0j.jpg">
+                            <source src="https://res.cloudinary.com/dg93hsoqh/video/upload/v1761545494/La_Historia_de_Kapricho_tyy6lb.mp4" type="video/mp4">
+                            <p data-lang="es">Tu navegador no soporta el elemento de video.</p>
+                        </video>
+                    </div>
+                </div>
+
+                <div class="history-text">
+                    <h2 data-lang="es">Nuestra Esencia</h2>
+                    <p data-lang="es">De un antojo casero a un movimiento de bienestar. Kapricho nació para transformar lo cotidiano en gourmet saludable.</p>
+
+                    <div class="history-description">
+                        <p data-lang="es">Descubre la historia detrás de Kapricho: desde un antojo familiar en Cúcuta hasta convertirnos en referentes del yogurt griego artesanal.</p>
+                        <p data-lang="es">Cada cucharada cuenta una historia de pasión, innovación y compromiso con la calidad. Únete a nuestra comunidad de amantes del bienestar natural.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content video-modal-content">
+            <span class="close-modal">&times;</span>
+            <video id="history-video" controls>
+                <source src="https://res.cloudinary.com/dg93hsoqh/video/upload/v1761545494/La_Historia_de_Kapricho_tyy6lb.mp4" type="video/mp4">
+                <p data-lang="es">Tu navegador no soporta el elemento de video.</p>
+            </video>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-lang="es">© 2025 AI (@Kapricho.Foods) – Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- WhatsApp Cart -->
+    <div class="cart-widget">
+        <div class="cart-icon">
+            <span class="cart-count">0</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Chatbase Chatbot Widget -->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="m0hA8cM11AIvR-OadSi6T";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>

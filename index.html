@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kapricho.Foods: Yogurt Griego, Kéfir y Cremositos hechos con pasión en Cúcuta. Experiencia gourmet saludable.">
+    <meta name="keywords" content="yogurt griego, kefir, cremositos, gourmet, saludable, Cúcuta, natural, artesanal">
+    <title>Home – Kapricho.Foods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" data-lang="es">Kapricho.Foods</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active" data-lang="es">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link" data-lang="es">Productos</a></li>
+                    <li><a href="historia.html" class="nav-link" data-lang="es">Historia</a></li>
+                    <li><a href="recetas.html" class="nav-link" data-lang="es">Recetas</a></li>
+                    <li><a href="contacto.html" class="nav-link" data-lang="es">Contacto</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('https://res.cloudinary.com/dg93hsoqh/image/upload/v1761589140/DSC_3688-Mejorado-NR_n0nj0j.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 data-lang="es">El placer natural hecho arte</h1>
+            <p class="hero-subtitle" data-lang="es">Yogurt Griego y Cremositos gourmet de Cúcuta</p>
+            <a href="productos.html" class="cta-button" data-lang="es">Descubre nuestros productos</a>
+        </div>
+    </section>
+
+    <!-- Value Highlights Section -->
+    <section class="value-highlights">
+        <div class="container">
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761541797/KAPRICHO_YOGURT_logo_w7i2mo.png" alt="Microfiltración artesanal" width="60" height="60">
+                    </div>
+                    <h3 data-lang="es">Microfiltración Artesanal</h3>
+                    <p data-lang="es">Proceso artesanal combinado con ciencia para lograr consistencia perfecta en cremosidad y textura.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761541797/KAPRICHO_YOGURT_logo_w7i2mo.png" alt="Cero aditivos" width="60" height="60">
+                    </div>
+                    <h3 data-lang="es">Cero Aditivos</h3>
+                    <p data-lang="es">Sin espesantes, almidones, colorantes ni saborizantes. Solo ingredientes naturales y puros.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761541797/KAPRICHO_YOGURT_logo_w7i2mo.png" alt="Digestibilidad superior" width="60" height="60">
+                    </div>
+                    <h3 data-lang="es">Digestibilidad Superior</h3>
+                    <p data-lang="es">Fácil de digerir, apto para estómagos sensibles. Beneficioso para la salud y el bienestar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini Catalog Section -->
+    <section class="mini-catalog">
+        <div class="container">
+            <h2 data-lang="es">Nuestra Carta Gourmet</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" id="prevBtn"><</button>
+                <div class="carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Mixed Product and Recipe Images (Randomized Order) -->
+                        <div class="carousel-slide recipe-slide" data-type="recipe">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761589142/DSC_3701-Mejorado-NR_cklmhk.jpg" alt="Receta con Yogurt Griego" loading="lazy">
+                        </div>
+                        <div class="carousel-slide product-slide" data-type="product">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761541757/300_Kapricho_Stevia_ke50ve.png" alt="Yogurt Griego 300g" loading="lazy">
+                        </div>
+                        <div class="carousel-slide recipe-slide" data-type="recipe">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761589140/DSC_3688-Mejorado-NR_n0nj0j.jpg" alt="Receta con Yogurt Griego" loading="lazy">
+                        </div>
+                        <div class="carousel-slide product-slide" data-type="product">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761541757/450_Kapricho_Stevia_xou7mw.png" alt="Yogurt Griego 450g" loading="lazy">
+                        </div>
+                        <div class="carousel-slide recipe-slide" data-type="recipe">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761589139/DSC_3680-Mejorado-NR_taifw9.jpg" alt="Receta con Yogurt Griego" loading="lazy">
+                        </div>
+                        <div class="carousel-slide product-slide" data-type="product">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761541758/Litro_Kapricho_Stevia_zc8gzr.png" alt="Yogurt Griego 1000g" loading="lazy">
+                        </div>
+                        <div class="carousel-slide recipe-slide" data-type="recipe">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761589135/DSC_3672-Mejorado-NR_nwyjpt.jpg" alt="Receta con Yogurt Griego" loading="lazy">
+                        </div>
+                        <div class="carousel-slide product-slide" data-type="product">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761569248/PXL_20250814_231225582.PORTRAIT.ORIGINAL_2_3_q3fdu2_d7785d.png" alt="Cremositos" loading="lazy">
+                        </div>
+                        <div class="carousel-slide recipe-slide" data-type="recipe">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761589133/DSC_3659-Mejorado-NR_yv4h2e.jpg" alt="Receta con Yogurt Griego" loading="lazy">
+                        </div>
+                        <div class="carousel-slide recipe-slide" data-type="recipe">
+                            <img src="https://res.cloudinary.com/dg93hsoqh/image/upload/v1761589146/Papaya_1_vhb7n1.jpg" alt="Receta con Yogurt Griego y Papaya" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" id="nextBtn">></button>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-lang="es">© 2025 AI (@Kapricho.Foods) – Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- WhatsApp Cart -->
+    <div class="cart-widget">
+        <div class="cart-icon">
+            <span class="cart-count">0</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Chatbase Chatbot Widget -->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="m0hA8cM11AIvR-OadSi6T";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
