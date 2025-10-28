@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="¡Hablemos! Sé parte de nuestros próximos lanzamientos: Kéfir y Yogurt funcionales.">
+    <meta name="keywords" content="contacto Kapricho, kefir, yogurt funcional, lanzamientos, Cúcuta">
+    <title>¡Hablemos!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" data-lang="es">Kapricho.Foods</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" data-lang="es">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link" data-lang="es">Productos</a></li>
+                    <li><a href="historia.html" class="nav-link" data-lang="es">Historia</a></li>
+                    <li><a href="recetas.html" class="nav-link" data-lang="es">Recetas</a></li>
+                    <li><a href="contacto.html" class="nav-link active" data-lang="es">Contacto</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h1 data-lang="es">¡Hablemos!</h1>
+            <p class="contact-subtitle" data-lang="es">Sé parte de nuestros próximos lanzamientos: Kéfir y Yogurt funcionales.</p>
+
+            <div class="contact-content">
+                <div class="contact-form-section">
+                    <h2 data-lang="es">Suscríbete a Nuestros Lanzamientos</h2>
+                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/manlqzga" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-lang="es">Nombre</label>
+                            <input type="text" id="name" name="name" required data-lang="es" placeholder="Tu nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-lang="es">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required data-lang="es" placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="comments" data-lang="es">Comentarios (opcional)</label>
+                            <textarea id="comments" name="comments" rows="4" data-lang="es" placeholder="Cuéntanos qué te interesa más sobre nuestros productos, lanzamientos o cualquier sugerencia..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" data-lang="es">Suscribirme</button>
+                    </form>
+                    <div id="form-message" class="form-message"></div>
+                </div>
+
+                <div class="contact-info">
+                    <h2 data-lang="es">Conecta con Nosotros</h2>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/kapricho.foods/" class="social-link instagram" target="_blank" rel="noopener">
+                            <span data-lang="es">Instagram</span>
+                            <small data-lang="es">@kapricho.foods</small>
+                        </a>
+                        <a href="https://www.tiktok.com/@kapricho.foods?lang=es-419" class="social-link tiktok" target="_blank" rel="noopener">
+                            <span data-lang="es">TikTok</span>
+                            <small data-lang="es">@kapricho.foods</small>
+                        </a>
+                        <a href="https://api.whatsapp.com/send/?phone=573247774420&text&type=phone_number&app_absent=0" class="social-link whatsapp" target="_blank" rel="noopener">
+                            <span data-lang="es">WhatsApp</span>
+                            <small data-lang="es">Business</small>
+                        </a>
+                    </div>
+
+                    <div class="contact-details">
+                        <h3 data-lang="es">Información de Contacto</h3>
+                        <p data-lang="es"><strong>Ubicación:</strong> Cúcuta, Colombia</p>
+                        <p data-lang="es"><strong>Especialidad:</strong> Yogurt Griego, Kéfir y Cremositos artesanales</p>
+                        <p data-lang="es"><strong>Valores:</strong> Autenticidad, bienestar, pasión por lo natural</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-lang="es">© 2025 AI (@Kapricho.Foods) – Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- WhatsApp Cart -->
+    <div class="cart-widget">
+        <div class="cart-icon">
+            <span class="cart-count">0</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Chatbase Chatbot Widget -->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="m0hA8cM11AIvR-OadSi6T";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
