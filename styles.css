@@ -81,6 +81,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px; /* Add horizontal padding to the nav container */
 }
 
 .logo a {
@@ -149,6 +150,7 @@ a {
     max-width: 600px;
     color: #FFFFFF;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-left: 20px; /* Add left padding to hero content */
 }
 
 .hero-content h1 {
@@ -1348,6 +1350,10 @@ body::before {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+
     .nav-menu {
         display: none;
         position: absolute;
@@ -1437,6 +1443,10 @@ body::before {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+
+    .hero-content {
+        padding-left: 15px; /* Adjust left padding for smaller screens */
     }
 
     h1 {
