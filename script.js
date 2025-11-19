@@ -299,12 +299,39 @@ class ContactForm {
     constructor() {
         this.form = document.getElementById('contact-form');
         this.messageDiv = document.getElementById('form-message');
+        this.submitBtn = this.form ? this.form.querySelector('.submit-btn') : null;
         this.init();
     }
 
     init() {
         if (this.form) {
             this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+
+            // Hide submit button initially
+            if (this.submitBtn) {
+                this.submitBtn.style.display = 'none';
+            }
+
+            // Add validation listeners to email fields
+            const emailInput = this.form.querySelector('#email');
+            const confirmEmailInput = this.form.querySelector('#confirm_email');
+
+            [emailInput, confirmEmailInput].forEach(input => {
+                if (input) {
+                    input.addEventListener('input', () => this.validateForm());
+                }
+            });
+        }
+    }
+
+    validateForm() {
+        const email = this.form.querySelector('#email').value.trim();
+        const confirmEmail = this.form.querySelector('#confirm_email').value.trim();
+
+        const isValid = email && confirmEmail && email === confirmEmail;
+
+        if (this.submitBtn) {
+            this.submitBtn.style.display = isValid ? 'inline-block' : 'none';
         }
     }
 
@@ -322,26 +349,36 @@ class ContactForm {
             // Get form data
             const formData = new FormData(this.form);
 
-            // Submit to Formspree using fetch
-            const response = await fetch('https://formspree.io/f/manlqzga', {
+            // Construct JSON data
+            const jsonData = {
+                nombre: formData.get('nombre'),
+                whatsapp: formData.get('whatsapp') || '',
+                email: formData.get('email'),
+                mensaje: formData.get('mensaje'),
+                permiso_email: formData.has('permiso_email'),
+                permiso_whatsapp: formData.has('permiso_whatsapp')
+            };
+
+            // Send data to N8N webhook
+            const response = await fetch('https://aibanez.app.n8n.cloud/webhook/40510bd6-04c5-4d23-9088-e2623a355ec5', {
                 method: 'POST',
-                body: formData,
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonData)
             });
 
-            if (response.ok) {
-                // Success - show message on same page
-                this.showMessage('¡Gracias por suscribirte! Te mantendremos informado sobre nuestros lanzamientos.', 'success');
-                this.form.reset();
-            } else {
-                // Error - show error message
-                this.showMessage('Hubo un error al enviar el formulario. Por favor intenta nuevamente.', 'error');
+            if (!response.ok) {
+                throw new Error('Failed to send data to webhook');
             }
+
+            // Success - show message on same page
+            this.showMessage('¡Gracias por tu mensaje! Te contactaremos pronto.', 'success');
+            this.form.reset();
+
         } catch (error) {
-            // Network error - show error message
-            this.showMessage('Error de conexión. Por favor verifica tu conexión a internet e intenta nuevamente.', 'error');
+            // Error - show error message
+            this.showMessage('Hubo un error al enviar el formulario. Por favor intenta nuevamente.', 'error');
         } finally {
             // Reset button state
             submitBtn.textContent = originalText;

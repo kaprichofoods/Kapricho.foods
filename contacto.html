@@ -44,20 +44,41 @@
             <div class="contact-content">
                 <div class="contact-form-section">
                     <h2 data-lang="es">Suscríbete a Nuestros Lanzamientos</h2>
-                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/manlqzga" method="POST">
+                    <form id="contact-form" class="contact-form">
                         <div class="form-group">
-                            <label for="name" data-lang="es">Nombre</label>
-                            <input type="text" id="name" name="name" required data-lang="es" placeholder="Tu nombre completo">
+                            <label for="nombre" data-lang="es">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required data-lang="es" placeholder="Tu nombre completo">
                         </div>
                         <div class="form-group">
-                            <label for="email" data-lang="es">Correo Electrónico</label>
+                            <label for="email" data-lang="es">Email</label>
                             <input type="email" id="email" name="email" required data-lang="es" placeholder="tu@email.com">
                         </div>
                         <div class="form-group">
-                            <label for="comments" data-lang="es">Comentarios (opcional)</label>
-                            <textarea id="comments" name="comments" rows="4" data-lang="es" placeholder="Cuéntanos qué te interesa más sobre nuestros productos, lanzamientos o cualquier sugerencia..."></textarea>
+                            <label for="confirm_email" data-lang="es">Confirmar Email</label>
+                            <input type="email" id="confirm_email" name="confirm_email" required data-lang="es" placeholder="tu@email.com">
                         </div>
-                        <button type="submit" class="submit-btn" data-lang="es">Suscribirme</button>
+                        <div class="form-group">
+                            <label for="whatsapp" data-lang="es">Whatsapp</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" data-lang="es" placeholder="+57 300 123 4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje" data-lang="es">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required data-lang="es" placeholder="Cuéntanos qué te interesa más sobre nuestros productos, lanzamientos o cualquier sugerencia..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="es">Autorizo contactarme vía:</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="permiso_email" name="permiso_email">
+                                    <span data-lang="es">Email</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="permiso_whatsapp" name="permiso_whatsapp">
+                                    <span data-lang="es">Whatsapp</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn" data-lang="es">Enviar</button>
                     </form>
                     <div id="form-message" class="form-message"></div>
                 </div>
