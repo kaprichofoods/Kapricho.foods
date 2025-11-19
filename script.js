@@ -388,14 +388,25 @@ class ContactForm {
 
     showMessage(message, type) {
         if (this.messageDiv) {
-            this.messageDiv.textContent = message;
+            this.messageDiv.innerHTML = `${message} <button class="close-message" type="button">&times;</button>`;
             this.messageDiv.className = `form-message ${type}`;
             this.messageDiv.style.display = 'block';
 
-            // Hide message after 5 seconds
-            setTimeout(() => {
+            // Add close button functionality
+            const closeBtn = this.messageDiv.querySelector('.close-message');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    this.messageDiv.style.display = 'none';
+                    if (this.hideTimeout) {
+                        clearTimeout(this.hideTimeout);
+                    }
+                });
+            }
+
+            // Hide message after 10 seconds
+            this.hideTimeout = setTimeout(() => {
                 this.messageDiv.style.display = 'none';
-            }, 5000);
+            }, 10000);
         }
     }
 }
@@ -913,29 +924,32 @@ function activateChatbot() {
     }
 }
 
-// Ensure Chatbase chatbot is properly initialized and visible
+// Ensure Chatbase chatbot is properly initialized and visible only on recipes page
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait for Chatbase to load and ensure it's visible
-    setTimeout(function() {
-        const chatWidget = document.querySelector('[id*="chatbase"]') ||
-                          document.querySelector('.chatbase-chatbot') ||
-                          document.querySelector('[class*="chatbase"]');
+    // Only apply on recipes page
+    if (window.location.pathname.includes('recetas.html')) {
+        // Wait for Chatbase to load and ensure it's visible
+        setTimeout(function() {
+            const chatWidget = document.querySelector('[id*="chatbase"]') ||
+                               document.querySelector('.chatbase-chatbot') ||
+                               document.querySelector('[class*="chatbase"]');
 
-        if (chatWidget) {
-            // Ensure proper styling
-            chatWidget.style.cssText += `
-                position: fixed !important;
-                bottom: 20px !important;
-                right: 20px !important;
-                z-index: 999999 !important;
-                width: 350px !important;
-                height: 500px !important;
-                border-radius: 15px !important;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-                border: none !important;
-            `;
-        }
-    }, 2000); // Wait 2 seconds for Chatbase to load
+            if (chatWidget) {
+                // Ensure proper styling
+                chatWidget.style.cssText += `
+                    position: fixed !important;
+                    bottom: 20px !important;
+                    right: 20px !important;
+                    z-index: 999999 !important;
+                    width: 350px !important;
+                    height: 500px !important;
+                    border-radius: 15px !important;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+                    border: none !important;
+                `;
+            }
+        }, 2000); // Wait 2 seconds for Chatbase to load
+    }
 });
 
 // Export for potential future use

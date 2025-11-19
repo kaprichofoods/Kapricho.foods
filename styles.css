@@ -882,6 +882,17 @@ a {
     color: #FFFFFF;
 }
 
+.close-message {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+    margin-left: 10px;
+}
+
 .contact-info {
     background-color: #FFFFFF;
     padding: 3rem;
